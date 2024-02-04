@@ -2,34 +2,62 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>task list</title>
-    <link rel="stylesheet" href="main.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Homepage</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="main.css">
+</head>
 </head>
 
 <body>
 
-    <header>
-        <h1>Task List</h1>
-        <form id="new-task-form">
-            <input type="text" name="new-task-input" id="new-task-input" placeholder="What would you like to cook?">
+  <header>
+    <h1>Task List</h1>
+    <form id="new-task-form">
+      <input type="text" name="new-task-input" id="new-task-input" placeholder="What would you like to cook?">
+      <input type="submit" id="new-task-submit" value="Add task">
+    </form>
+  </header>
 
-            <input type="submit" id="new-task-submit" value="Add task">
+  <main>
+    <section class="task-list">
+      <h2>Tasks</h2>
+      <div id="tasks">
+    </section>
+  </main>
 
-        </form>
-    </header>
+  <div class="slideshow-container">
+    <div class="my-slides fade">
+      <div class="number-text">1 / 4</div>
+      <img src="kitchen-1.jpg" />
+      <div class="caption-text">What's missing in your refrigirator?</div>
+    </div>
 
-    <main>
-        <section class="task-list">
-            <h2>Tasks</h2>
-            <div id="tasks">
+    <div class="my-slides fade">
+      <div class="number-text">2 / 4</div>
+      <img src="kitchen-2.jpg" />
+      <div class="caption-text">What's missing on your shelves?</div>
+    </div>
 
-        </section>
+    <div class="my-slides fade">
+      <div class="number-text">3 / 4</div>
+      <img src="kitchen-3.jpg" />
+      <div class="caption-text">What herbs do you need?</div>
+    </div>
 
-    </main>
-    <script src="main.js"></script>
+    <div class="my-slides fade">
+      <div class="number-text">4 / 4</div>
+      <img src="kitchen-4.jpg" />
+      <div class="caption-text">What's missing in your kitchen?</div>
+    </div>
+
+    <a class="prev-button" onclick="plusSlides(-1)">❮</a>
+    <a class="next-button" onclick="plusSlides(1)">❯</a>
+  </div>
+  <script src="main.js"></script>
 </body>
 
 </html>
