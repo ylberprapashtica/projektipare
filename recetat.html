@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recetat</title>
+  <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+  <header>
+    <h1>Add your recipe in four simple steps</h1>
+    <ul class="add-recipe-steps" style="list-style-type: none;">
+      <li>First, add the name of the recipe.</li>
+      <li>Second, add the ingredients.</li>
+      <li>Third, add the instructions.</li>
+      <li>Last, add the video instruction (optional).</li>
+    </ul>
+  </header>
+  <main>
+    <form class="add-recipe-form">
+      <section>
+        <label for="name-recipe">What is the name of your recipe?</label>
+        <input type="text" name="name-recipe" class="new-recipe-input">
+        <input type="submit" class="new-recipe-submit">
+      </section>
+      <section>
+        <label for="name-ingredients">What are the ingredients of your recipe?</label>
+        <select name="name-ingredients" class="new-recipe-input">
+          <option value="empty"></option>
+          <option value="eggs">Eggs</option>
+          <option value="sugar">Sugar</option>
+          <option value="flour">Flour</option>
+          <option value="baking-powder">Baking Powder</option>
+        </select>
+        <input type="submit" class="new-recipe-submit">
+      </section>
+      <section>
+        <label for="name-recipe">How to make your recipe?</label>
+        <textarea name="name-recipe" class="new-recipe-input"></textarea>
+        <input type="submit" class="new-recipe-submit">
+      </section>
+      <section>
+        <label for="name-recipe">Do you have a video showing how to make the recipe? (optional)</label>
+        <input type="file" accept='video/*' name="name-recipe" class="new-recipe-input">
+        <input type="submit" class="new-recipe-submit">
+      </section>
+    </form>
+  </main>
+  <script src="addrecipe.js"></script>
+</body>
+
+</html>
