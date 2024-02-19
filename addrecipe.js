@@ -13,18 +13,27 @@ let el;
 let userInput;
 
 function displayInput() {
-  el = document.createElement("h1")
-  displayRecipeDiv.appendChild(el)
+  let el = document.getElementById("titulli");
+  // el = document.createElement("h1")
+  // displayRecipeDiv.appendChild(el)
   el.innerHTML = titleRecipeInput.value
-
+  titleRecipeInput.value = "";
 }
 
 let recipeIngredients = document.getElementsByClassName("checkbox-input")
-
+console.log(recipeIngredients)
 function displayIngredients() {
-  el = document.createElement('p')
-  displayRecipeDiv.appendChild(el)
-  el.innerHTML = recipeIngredients.value
+  // el = document.createElement('p')
+  // displayRecipeDiv.appendChild(el)
+  let el = displayRecipeDiv;
+  // debugger;
+  el.innerHTML = ''
+  for (let i = 0; i < recipeIngredients.length; i++) {
+    if (recipeIngredients[i].checked) {
+      el.innerHTML += recipeIngredients[i].value
+    }
+  }
+
 }
 
 let instructionsInput = document.getElementById('new-recipe-instructions-input')
