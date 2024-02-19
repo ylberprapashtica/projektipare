@@ -30,7 +30,8 @@ header {
 }
 
 header h1,
-label {
+label,
+h1 {
   font-size: 2.5rem;
   font-weight: 300;
   color: var(--gray);
@@ -76,6 +77,14 @@ button {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   transition: 0.4s;
+}
+
+input[type="checkbox"] {
+  width: 3em;
+  height: 2rem;
+  accent-color: var(--pink);
+  margin-top: 10px;
+  text-align: center;
 }
 
 #new-task-submit:hover,
@@ -160,4 +169,8 @@ main {
 
 .task .actions .delete {
   color: crimson;
+}
+
+#ingredients-checkbox input {
+  appearance: auto;
 }

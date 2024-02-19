@@ -20,34 +20,41 @@
     </ul>
   </header>
   <main>
-    <form class="add-recipe-form">
+    <div class="add-recipe-form">
       <section>
         <label for="name-recipe">What is the name of your recipe?</label>
-        <input type="text" name="name-recipe" class="new-recipe-input">
-        <input type="submit" class="new-recipe-submit">
+        <input type="text" name="name-recipe" id="new-recipe-input" class="new-recipe-input">
+        <input type="submit" id="title-recipe-submit" onclick="displayInput()" class="new-recipe-submit">
       </section>
+
+      <section id="ingredients-checkbox">
+        <h1>What are the ingredients of your recipe?</h1>
+        <input type="checkbox" id="eggs" name="eggs" value="eggs" class="checkbox-input">
+        <label for="eggs"> Eggs</label><br>
+        <input type="checkbox" id="flour" name="flour" value="flour" class="checkbox-input">
+        <label for="flour"> Flour</label><br>
+        <input type="checkbox" id="sugar" name="sugar" value="sugar" class="checkbox-input">
+        <label for="sugar"> Sugar</label><br><br>
+        <input type="checkbox" id="baking-powder" name="baking-powder" value="baking-powder" class="checkbox-input">
+        <label for="baking-powder"> Baking Powder</label><br><br>
+        <input type="submit" class="new-recipe-submit" onclick="displayIngredients()">
+      </section>
+
+
       <section>
-        <label for="name-ingredients">What are the ingredients of your recipe?</label>
-        <select name="name-ingredients" class="new-recipe-input">
-          <option value="empty"></option>
-          <option value="eggs">Eggs</option>
-          <option value="sugar">Sugar</option>
-          <option value="flour">Flour</option>
-          <option value="baking-powder">Baking Powder</option>
-        </select>
-        <input type="submit" class="new-recipe-submit">
+        <label for="instruction-recipe">How to make your recipe?</label>
+        <textarea name="instruction-recipe" class="new-recipe-input" id="new-recipe-instructions-input"></textarea>
+        <input type="submit" class="new-recipe-submit" onclick="displayInstructions()">
       </section>
+
+
       <section>
-        <label for="name-recipe">How to make your recipe?</label>
-        <textarea name="name-recipe" class="new-recipe-input"></textarea>
+        <label for="video-recipe">Do you have a video showing how to make the recipe? (optional)</label>
+        <input type="file" accept='video/*' name="video-recipe" class="new-recipe-input">
         <input type="submit" class="new-recipe-submit">
       </section>
-      <section>
-        <label for="name-recipe">Do you have a video showing how to make the recipe? (optional)</label>
-        <input type="file" accept='video/*' name="name-recipe" class="new-recipe-input">
-        <input type="submit" class="new-recipe-submit">
-      </section>
-    </form>
+    </div>
+    <div id="displayRecipe"></div>
   </main>
   <script src="addrecipe.js"></script>
 </body>
