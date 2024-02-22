@@ -50,19 +50,18 @@
 
       <section>
         <label for="video-recipe">Do you have a video showing how to make the recipe? (optional)</label>
-        <input type="file" accept='video/*' name="video-recipe" class="new-recipe-input">
-        <input type="submit" class="new-recipe-submit">
+        <input type="file" accept='video/*' name="video-recipe" class="new-recipe-input" id="new-recipe-input-video">
+        <input type="submit" class="new-recipe-submit" onclick="displayVideo()">
       </section>
     </div>
     <div id="displayRecipe">
-      <h2 id="titulli">Titulli</h2>
-      <p>
-
-      </p>
-      <ul>
+      <h1 id="titulli">Titulli</h1>
+      <ul id="list-of-ingredients">
 
       </ul>
-      <a href=""></a>
+      <video width="420" height="240" style="display:none" id="display-video" controls autoplay>
+        Your browser does not support the video tag.
+      </video>
     </div>
   </main>
   <script src="addrecipe.js"></script>

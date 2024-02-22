@@ -21,19 +21,20 @@ function displayInput() {
 }
 
 let recipeIngredients = document.getElementsByClassName("checkbox-input")
-console.log(recipeIngredients)
+let listOfIngredientsEL = document.getElementById('list-of-ingredients')
+
 function displayIngredients() {
   // el = document.createElement('p')
   // displayRecipeDiv.appendChild(el)
-  let el = displayRecipeDiv;
+  // el = document.createElement('li')
+  // listOfIngredientsEL.appendChild(el)
+  listOfIngredientsEL.innerHTML = ''
   // debugger;
-  el.innerHTML = ''
   for (let i = 0; i < recipeIngredients.length; i++) {
     if (recipeIngredients[i].checked) {
-      el.innerHTML += recipeIngredients[i].value
+      listOfIngredientsEL.innerHTML += `<li> ${recipeIngredients[i].value} </li>`
     }
   }
-
 }
 
 let instructionsInput = document.getElementById('new-recipe-instructions-input')
@@ -42,8 +43,17 @@ function displayInstructions() {
   el = document.createElement('p')
   displayRecipeDiv.appendChild(el)
   el.innerHTML = instructionsInput.value
+  instructionsInput.value = "";
 }
 
+let displayVideoEl = document.getElementById('display-video')
+let newInputVideo = document.getElementById('new-recipe-input-video')
+
+function displayVideo() {
+  let newVideo = URL.createObjectURL(newInputVideo.files[0]);
+  displayVideoEl.style.display = 'block'
+  displayVideoEl.src = newVideo
+}
 
 // titleRecipeSubmit.addEventListener('click', addRecipeName())
 
