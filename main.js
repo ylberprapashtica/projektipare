@@ -1,11 +1,11 @@
-let slideIndex = 1;
+
 window.addEventListener('load', () => {
   let form = document.querySelector("#new-task-form");
   let input = document.querySelector("#new-task-input");
   let list_el = document.querySelector("#tasks");
 
-  
-  showSlides(slideIndex);
+  addSlideNumber()
+  calcAndDisplayActiveSlide(activeSlideIndex);
 
   form.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -105,25 +105,41 @@ function createDeleteEl() {
   return task_delete_el
 }
 
-function plusSlides(n) {
-  showSlides((slideIndex += n));
+let activeSlideIndex = 1;
+// eshte tu u kriju ni array me qeto elemente, it could have a more descriptive name
+let slides = document.getElementsByClassName("my-slides");
+let totalSlidesOfSlider = slides.length
+
+//changeNumber is the number of slides it will go forward or backward
+function changeCurrentSlideByNumber(changeNumber) {
+  calcAndDisplayActiveSlide((activeSlideIndex += changeNumber));
 }
 
-function currentSlide(n) {
-  showSlides((slideIndex = n));
+function calcAndDisplayActiveSlide(currentSlideNumber) {
+  calcActiveSlide(currentSlideNumber)
+  displayActiveSlide()
 }
 
-function showSlides(n) {
-  let i;
-  let slides = document.getElementsByClassName("my-slides");
-  if (n > slides.length) {
-    slideIndex = 1;
+function calcActiveSlide(currentSlideNumber) {
+  if (currentSlideNumber > totalSlidesOfSlider) {
+    activeSlideIndex = 1;
+  } else if (currentSlideNumber < 1) {
+    activeSlideIndex = totalSlidesOfSlider;
   }
-  if (n < 1) {
-    slideIndex = slides.length;
-  }
-  for (i = 0; i < slides.length; i++) {
+}
+
+function displayActiveSlide() {
+  for (let i = 0; i < totalSlidesOfSlider; i++) {
     slides[i].style.display = "none";
   }
-  slides[slideIndex - 1].style.display = "block";
+  slides[activeSlideIndex - 1].style.display = "block";
+}
+
+function addSlideNumber() {
+  for (let i = 0; i < totalSlidesOfSlider; i++) {
+    let sliderNumberEl = document.createElement('div');
+    sliderNumberEl.classList.add("number-text");
+    sliderNumberEl.innerHTML = i + 1 + "/" + totalSlidesOfSlider
+    slides[i].appendChild(sliderNumberEl)
+  }
 }
