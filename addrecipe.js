@@ -8,17 +8,23 @@
 // const instructionRecipeEl = document.getElementsByName('instruction-recipe')
 // const videoRecipeEl = document.getElementsByName('video-recipe')
 let titleRecipeInput = document.getElementById('new-recipe-input')
-let displayRecipeDiv = document.getElementById('displayRecipe')
+
 let el;
 let userInput;
 
 function displayInput() {
-  let el = document.getElementById("titulli");
+  el = document.getElementById("titulli");
   // el = document.createElement("h1")
   // displayRecipeDiv.appendChild(el)
   el.innerHTML = titleRecipeInput.value
   titleRecipeInput.value = "";
 }
+
+const nameRecipeSubmit = document.getElementById('title-recipe-submit')
+
+nameRecipeSubmit.addEventListener('click', function () {
+  displayInput();
+})
 
 let recipeIngredients = document.getElementsByClassName("checkbox-input")
 let listOfIngredientsEL = document.getElementById('list-of-ingredients')
@@ -28,11 +34,11 @@ function displayIngredients() {
   // displayRecipeDiv.appendChild(el)
   // el = document.createElement('li')
   // listOfIngredientsEL.appendChild(el)
+
   listOfIngredientsEL.innerHTML = ''
-  // debugger;
   for (let i = 0; i < recipeIngredients.length; i++) {
     if (recipeIngredients[i].checked) {
-      listOfIngredientsEL.innerHTML += `<li> ${recipeIngredients[i].value} </li>`
+      listOfIngredientsEL.innerHTML += "<li>" + recipeIngredients[i].value + "</li>"
     }
   }
 }
@@ -69,3 +75,13 @@ function displayVideo() {
 
 
 // titleRecipeSubmit.addEventListener('click', newName)
+
+// if (avaliableKeyWords[1].includes(input)) {
+//   result.push(avaliableKeyWords[1])
+// }
+
+// for (let i = 0; i < avaliableKeyWords.length; i++) {
+//   if (avaliableKeyWords[i].toLowerCase().includes(input.toLowerCase())) {
+//     result.push(avaliableKeyWords[i])
+//   }
+// }

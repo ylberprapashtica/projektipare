@@ -20,11 +20,12 @@
     </ul>
   </header>
   <main>
+
     <div class="add-recipe-form">
       <section>
         <label for="name-recipe">What is the name of your recipe?</label>
         <input type="text" name="name-recipe" id="new-recipe-input" class="new-recipe-input">
-        <input type="submit" id="title-recipe-submit" onclick="displayInput()" class="new-recipe-submit">
+        <input type="submit" id="title-recipe-submit" class="new-recipe-submit">
       </section>
 
       <section id="ingredients-checkbox">
@@ -37,6 +38,8 @@
         <label for="sugar"> Sugar</label><br><br>
         <input type="checkbox" id="baking-powder" name="baking-powder" value="baking-powder" class="checkbox-input">
         <label for="baking-powder"> Baking Powder</label><br><br>
+        <input type="checkbox" id="milk" name="milk" value="milk" class="checkbox-input">
+        <label for="milk"> Milk</label><br><br>
         <input type="submit" class="new-recipe-submit" onclick="displayIngredients()">
       </section>
 
