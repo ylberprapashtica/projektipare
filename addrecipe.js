@@ -22,9 +22,7 @@ function displayInput() {
 
 const nameRecipeSubmit = document.getElementById('title-recipe-submit')
 
-nameRecipeSubmit.addEventListener('click', function () {
-  displayInput();
-})
+nameRecipeSubmit.addEventListener('click', displayInput)
 
 let recipeIngredients = document.getElementsByClassName("checkbox-input")
 let listOfIngredientsEL = document.getElementById('list-of-ingredients')
@@ -43,14 +41,21 @@ function displayIngredients() {
   }
 }
 
+const newRecipeSubmitBtn = document.getElementById("ingredients-submit-btn")
+
+newRecipeSubmitBtn.addEventListener('click', displayIngredients)
+
 let instructionsInput = document.getElementById('new-recipe-instructions-input')
 
 function displayInstructions() {
-  el = document.createElement('p')
-  displayRecipeDiv.appendChild(el)
+  el = document.getElementById("instructions-display")
   el.innerHTML = instructionsInput.value
-  instructionsInput.value = "";
+  // instructionsInput.value = "";
 }
+
+const displayInstructionsBtn = document.getElementById("instruction-submit-btn")
+
+displayInstructionsBtn.addEventListener("click", displayInstructions)
 
 let displayVideoEl = document.getElementById('display-video')
 let newInputVideo = document.getElementById('new-recipe-input-video')
@@ -60,6 +65,11 @@ function displayVideo() {
   displayVideoEl.style.display = 'block'
   displayVideoEl.src = newVideo
 }
+
+const videoSubmitBtn = document.getElementById("video-submit-btn")
+
+videoSubmitBtn.addEventListener("click", displayVideo)
+
 
 // titleRecipeSubmit.addEventListener('click', addRecipeName())
 

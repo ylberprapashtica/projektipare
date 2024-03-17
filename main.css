@@ -192,3 +192,13 @@ main {
 #ingredients-checkbox input {
   appearance: auto;
 }
+
+/* recetat.html */
+.add-recipe-steps {
+  list-style-type: none;
+}
+#display-video {
+  width: 420px;
+  height: 240px;
+  display: none;
+}
